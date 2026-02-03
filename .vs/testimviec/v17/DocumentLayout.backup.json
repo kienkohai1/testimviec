@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\khacb\\source\\repos\\testimviec\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\controllers\\cvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\controllers\\cvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\testimviec.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\testimviec.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\models\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\models\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\migrations\\20260203091416_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\migrations\\20260203091416_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CVController.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Controllers\\CVController.cs",
+              "RelativeDocumentMoniker": "testimviec\\Controllers\\CVController.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Controllers\\CVController.cs",
+              "RelativeToolTip": "testimviec\\Controllers\\CVController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:15:53.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20260203091416_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260203091416_InitialCreate.cs",
+              "RelativeDocumentMoniker": "testimviec\\Migrations\\20260203091416_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260203091416_InitialCreate.cs",
+              "RelativeToolTip": "testimviec\\Migrations\\20260203091416_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:14:16.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json",
+              "RelativeDocumentMoniker": "testimviec\\appsettings.json",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json",
+              "RelativeToolTip": "testimviec\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-03T09:12:12.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Program.cs",
+              "RelativeDocumentMoniker": "testimviec\\Program.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Program.cs",
+              "RelativeToolTip": "testimviec\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:11:43.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "testimviec.csproj",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\testimviec.csproj",
+              "RelativeDocumentMoniker": "testimviec\\testimviec.csproj",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\testimviec.csproj",
+              "RelativeToolTip": "testimviec\\testimviec.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-03T09:05:27.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "testimviec\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "testimviec\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:04:51.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Candidate.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Models\\Candidate.cs",
+              "RelativeDocumentMoniker": "testimviec\\Models\\Candidate.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Models\\Candidate.cs",
+              "RelativeToolTip": "testimviec\\Models\\Candidate.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAkwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:04:28.188Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
