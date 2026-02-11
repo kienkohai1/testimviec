@@ -317,6 +317,10 @@
       "PackagePath": "staticwebassets\\uploads\\db264896-20b7-42b5-ad07-1afd701e8a93_Ha-Hang-TopCV.vn-131025.142251.pdf"
     },
     {
+      "Id": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "PackagePath": "staticwebassets\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.testimviec.props",
       "PackagePath": "build\\testimviec.props"
     },

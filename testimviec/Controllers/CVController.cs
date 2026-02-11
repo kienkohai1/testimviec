@@ -75,7 +75,6 @@ namespace testimviec.Controllers
                 }
 
                 // --- LÀM SẠCH VĂN BẢN ĐỂ TRÁNH LỖI JSON ---
-                // Loại bỏ ký tự lạ, nén khoảng trắng, giới hạn độ dài để model trả về JSON ổn định
                 string cleanText = rawText.Replace("\r", " ").Replace("\n", " ").Replace("\t", " ");
                 while (cleanText.Contains("  ")) cleanText = cleanText.Replace("  ", " ");
                 cleanText = cleanText.Trim();
@@ -123,7 +122,7 @@ namespace testimviec.Controllers
                 var httpResponse = await client.PostAsync(apiUrl, new StringContent(jsonPayload, Encoding.UTF8, "application/json"));
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
 
-                // Retry một lần với CV ngắn hơn nếu Groq báo lỗi JSON
+                // Retry nếu lỗi JSON
                 if (!httpResponse.IsSuccessStatusCode && responseContent.Contains("json_validate_failed") && cleanText.Length > 1500)
                 {
                     cleanText = cleanText.Substring(0, 1500);
@@ -162,7 +161,7 @@ namespace testimviec.Controllers
                     return Content("Lỗi: API Groq không trả về nội dung.");
                 }
 
-                // 5. Deserialize với tùy chọn linh hoạt
+                // 5. Deserialize
                 var options = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true,
@@ -176,7 +175,6 @@ namespace testimviec.Controllers
                     return Content("Lỗi: Không phân tích được CV từ phản hồi của AI.");
                 }
 
-                // Trả về màn hình xem trước kết quả phân tích để người dùng xác nhận trước khi lưu
                 ViewBag.FilePath = "/uploads/" + uniqueFileName;
                 ViewBag.RawJsonResult = resultJson;
 
@@ -189,7 +187,8 @@ namespace testimviec.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Confirm(CandidateDto dto, string filePath, string rawJsonResult)
+        // Đã thêm tham số skillsString vào đây để nhận dữ liệu từ form
+        public async Task<IActionResult> Confirm(CandidateDto dto, string filePath, string rawJsonResult, string skillsString)
         {
             if (dto == null)
             {
@@ -201,7 +200,12 @@ namespace testimviec.Controllers
                 FullName = dto.FullName ?? "Không rõ",
                 Email = dto.Email ?? string.Empty,
                 Phone = dto.Phone ?? string.Empty,
-                Skills = dto.Skills != null ? string.Join(", ", dto.Skills) : string.Empty,
+
+                // Logic quan trọng: Lấy từ skillsString (chuỗi người dùng đã sửa trên form)
+                Skills = !string.IsNullOrEmpty(skillsString)
+                            ? skillsString
+                            : (dto.Skills != null ? string.Join(", ", dto.Skills) : string.Empty),
+
                 ExperienceYears = dto.ExperienceYears,
                 Strengths = dto.Strengths ?? string.Empty,
                 Weaknesses = dto.Weaknesses ?? string.Empty,

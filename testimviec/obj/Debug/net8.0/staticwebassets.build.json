@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qe0KNr1uEPL+XD+FLo6a3OQi1un//+7OiM6REYW06DM=",
+  "Hash": "hMY7gExJZpYWMvcN3xXLvG/HJs3mjiO4TJo6GlSveVs=",
   "Source": "testimviec",
   "BasePath": "_content/testimviec",
   "Mode": "Default",
@@ -1695,6 +1695,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\db264896-20b7-42b5-ad07-1afd701e8a93_Ha-Hang-TopCV.vn-131025.142251.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "SourceId": "testimviec",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\",
+      "BasePath": "_content/testimviec",
+      "RelativePath": "uploads/f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d6aptxqe0h",
+      "Integrity": "xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf"
     }
   ],
   "Endpoints": [
@@ -8245,6 +8266,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 11 Feb 2026 15:22:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.d6aptxqe0h.pdf",
+      "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Feb 2026 15:32:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d6aptxqe0h"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Feb 2026 15:32:10 GMT"
         },
         {
           "Name": "Cache-Control",
