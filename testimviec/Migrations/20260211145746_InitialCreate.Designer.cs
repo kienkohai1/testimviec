@@ -12,7 +12,7 @@ using testimviec.Models;
 namespace testimviec.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260203091416_InitialCreate")]
+    [Migration("20260211145746_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -63,13 +63,21 @@ namespace testimviec.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Strengths")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Summary")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Weaknesses")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candidates");
+                    b.ToTable("Candidate");
                 });
 #pragma warning restore 612, 618
         }

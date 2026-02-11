@@ -188,4 +188,4 @@ C:\Users\khacb\source\repos\testimviec\testimviec\bin\Debug\net8.0\UglyToad.PdfP
 C:\Users\khacb\source\repos\testimviec\testimviec\bin\Debug\net8.0\UglyToad.PdfPig.Tokenization.dll
 C:\Users\khacb\source\repos\testimviec\testimviec\bin\Debug\net8.0\UglyToad.PdfPig.Tokens.dll
 C:\Users\khacb\source\repos\testimviec\testimviec\bin\Debug\net8.0\UglyToad.PdfPig.dll
-C:\Users\khacb\source\repos\testimviec\testimviec\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\khacb\source\repos\testimviec\testimviec\obj\Debug\net8.0\testimviec.sourcelink.json

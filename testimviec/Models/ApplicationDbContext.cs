@@ -9,7 +9,7 @@ namespace testimviec.Models
         {
         }
 
-        public DbSet<Candidate> Candidates { get; set; }
+        public DbSet<Candidate> Candidate { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

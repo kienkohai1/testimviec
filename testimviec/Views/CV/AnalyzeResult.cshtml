@@ -1,0 +1,87 @@
+@model testimviec.Controllers.CandidateDto
+@{
+    ViewData["Title"] = "Kết quả phân tích CV";
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h2 class="mb-0">Kết quả phân tích CV</h2>
+                <p class="text-muted mb-0">Kiểm tra và chỉnh sửa thông tin trước khi lưu vào hệ thống.</p>
+            </div>
+        </div>
+
+        <form asp-action="Confirm" method="post">
+            <div class="card mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Họ và Tên</label>
+                                <input asp-for="FullName" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input asp-for="Email" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Số điện thoại</label>
+                                <input asp-for="Phone" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Số năm kinh nghiệm</label>
+                                <input asp-for="ExperienceYears" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Kỹ năng (danh sách)</label>
+                        @{
+                            var skillsText = Model.Skills != null ? string.Join(", ", Model.Skills) : string.Empty;
+                        }
+                        <input class="form-control" value="@skillsText" readonly />
+                        <small class="form-text text-muted">Hiện tại chỉ hiển thị để xem; khi lưu sẽ gộp dạng chuỗi như trước.</small>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Điểm mạnh</label>
+                                <textarea asp-for="Strengths" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Điểm yếu</label>
+                                <textarea asp-for="Weaknesses" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tóm tắt ứng viên</label>
+                        <textarea asp-for="Summary" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="filePath" value="@ViewBag.FilePath" />
+            <input type="hidden" name="rawJsonResult" value="@ViewBag.RawJsonResult" />
+
+            <button type="submit" class="btn btn-primary">Xác nhận lưu</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Hủy, quay lại danh sách</a>
+        </form>
+    </div>
+</div>
+

@@ -2,15 +2,26 @@
     ViewData["Title"] = "Tải CV";
 }
 
-<h2>Tải CV</h2>
+<div class="row">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title mb-3">Tải CV</h2>
+                <p class="text-muted mb-4">
+                    Chọn file CV định dạng PDF, hệ thống sẽ tự động phân tích và trích xuất thông tin ứng viên.
+                </p>
 
-<form asp-action="Upload" method="post" enctype="multipart/form-data">
-    <div class="mb-3">
-        <label for="cvFile" class="form-label">Chọn file CV (PDF)</label>
-        <input type="file" class="form-control" id="cvFile" name="cvFile" accept=".pdf" />
+                <form asp-action="Upload" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="cvFile" class="form-label">Chọn file CV (PDF)</label>
+                        <input type="file" class="form-control" id="cvFile" name="cvFile" accept=".pdf" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Phân tích CV</button>
+                    <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại danh sách</a>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Phân tích CV</button>
-    <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại danh sách</a>
-</form>
+</div>
 

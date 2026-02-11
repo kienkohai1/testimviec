@@ -12,7 +12,7 @@ namespace testimviec.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Candidates",
+                name: "Candidate",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -22,6 +22,8 @@ namespace testimviec.Migrations
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Skills = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ExperienceYears = table.Column<int>(type: "int", nullable: false),
+                    Strengths = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Weaknesses = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AnalyzedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -29,7 +31,7 @@ namespace testimviec.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Candidates", x => x.Id);
+                    table.PrimaryKey("PK_Candidate", x => x.Id);
                 });
         }
 
@@ -37,7 +39,7 @@ namespace testimviec.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Candidates");
+                name: "Candidate");
         }
     }
 }

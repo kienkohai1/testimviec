@@ -1,23 +1,41 @@
 using Microsoft.AspNetCore.Mvc;
 using testimviec.Models;
-using Mscc.GenerativeAI;
 using System.Text.Json;
 using UglyToad.PdfPig;
+using System.Net.Http.Headers;
+using System.Text;
+
 namespace testimviec.Controllers
 {
+    // DTO để hứng dữ liệu từ AI
+    public class CandidateDto
+    {
+        public required string FullName { get; set; }
+        public required string Email { get; set; }
+        public required string Phone { get; set; }
+        public required List<string> Skills { get; set; }
+        public int ExperienceYears { get; set; }
+        public required string Strengths { get; set; }
+        public required string Weaknesses { get; set; }
+        public required string Summary { get; set; }
+    }
+
     public class CVController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly string _apiKey = "AIzaSyAV-pBonQcQypN3hiPWXijYsoq63-qBdU4"; // Thay bằng Key của bạn
+        private readonly IWebHostEnvironment _environment;
+        private readonly IConfiguration _configuration;
 
-        public CVController(ApplicationDbContext context)
+        public CVController(ApplicationDbContext context, IWebHostEnvironment environment, IConfiguration configuration)
         {
             _context = context;
+            _environment = environment;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
-            var candidates = _context.Candidates.OrderByDescending(c => c.AnalyzedAt).ToList();
+            var candidates = _context.Candidate.ToList();
             return View(candidates);
         }
 
@@ -32,40 +50,181 @@ namespace testimviec.Controllers
         {
             if (cvFile == null || cvFile.Length == 0) return Content("File không hợp lệ");
 
-            // 1. Trích xuất Text từ PDF
-            string rawText = "";
-            using (var document = PdfDocument.Open(cvFile.OpenReadStream()))
+            try
             {
-                foreach (var page in document.GetPages())
+                // 1. Lưu file gốc
+                string uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
+                if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + cvFile.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    rawText += page.Text;
+                    await cvFile.CopyToAsync(fileStream);
                 }
+
+                // 2. Trích xuất Text từ PDF
+                string rawText = "";
+                using (var document = PdfDocument.Open(cvFile.OpenReadStream()))
+                {
+                    foreach (var page in document.GetPages())
+                    {
+                        rawText += page.Text + " ";
+                    }
+                }
+
+                // --- LÀM SẠCH VĂN BẢN ĐỂ TRÁNH LỖI JSON ---
+                // Loại bỏ ký tự lạ, nén khoảng trắng, giới hạn độ dài để model trả về JSON ổn định
+                string cleanText = rawText.Replace("\r", " ").Replace("\n", " ").Replace("\t", " ");
+                while (cleanText.Contains("  ")) cleanText = cleanText.Replace("  ", " ");
+                cleanText = cleanText.Trim();
+                if (cleanText.Length > 3000) cleanText = cleanText.Substring(0, 3000);
+
+                // 3. Gọi Groq API
+                var apiKey = _configuration["Groq:ApiKey"];
+                var modelName = _configuration["Groq:Model"];
+                var apiUrl = "https://api.groq.com/openai/v1/chat/completions";
+
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+                const string jsonSchema = @"{
+  ""FullName"": """",
+  ""Email"": """",
+  ""Phone"": """",
+  ""Skills"": [],
+  ""ExperienceYears"": 0,
+  ""Strengths"": """",
+  ""Weaknesses"": """",
+  ""Summary"": """"
+}";
+
+                var requestBody = new
+                {
+                    model = modelName,
+                    messages = new[]
+                    {
+                        new {
+                            role = "system",
+                            content = "Bạn là máy trích xuất dữ liệu từ CV. Nhiệm vụ: trả về ĐÚNG MỘT object JSON hợp lệ, không bọc trong markdown (không dùng ```json hay ```), không thêm lời giải thích. Chỉ in ra nội dung JSON thuần. Nếu thiếu trường thì để chuỗi rỗng \"\" hoặc 0. Skills là mảng chuỗi. Strengths là mô tả ngắn gọn điểm mạnh của ứng viên, Weaknesses là mô tả ngắn gọn điểm yếu / điểm cần cải thiện."
+                        },
+                        new {
+                            role = "user",
+                            content = $"Trích xuất thông tin CV sau vào đúng format JSON này (chỉ trả về JSON, không code block):\n{jsonSchema}\n\nNội dung CV:\n{cleanText}"
+                        }
+                    },
+                    response_format = new { type = "json_object" },
+                    temperature = 0.1,
+                    max_tokens = 1024
+                };
+
+                var jsonPayload = JsonSerializer.Serialize(requestBody);
+                var httpResponse = await client.PostAsync(apiUrl, new StringContent(jsonPayload, Encoding.UTF8, "application/json"));
+                var responseContent = await httpResponse.Content.ReadAsStringAsync();
+
+                // Retry một lần với CV ngắn hơn nếu Groq báo lỗi JSON
+                if (!httpResponse.IsSuccessStatusCode && responseContent.Contains("json_validate_failed") && cleanText.Length > 1500)
+                {
+                    cleanText = cleanText.Substring(0, 1500);
+                    requestBody = new
+                    {
+                        model = modelName,
+                        messages = new[]
+                        {
+                            new { role = "system", content = "Bạn là máy trích xuất dữ liệu từ CV. Trả về ĐÚNG MỘT object JSON hợp lệ, không markdown, không giải thích. Chỉ JSON thuần. Thiếu thì để \"\" hoặc 0. Skills là mảng chuỗi. Strengths là mô tả điểm mạnh, Weaknesses là mô tả điểm yếu / điểm cần cải thiện." },
+                            new { role = "user", content = $"Trích xuất CV thành JSON (chỉ JSON, không code block):\n{jsonSchema}\n\nNội dung:\n{cleanText}" }
+                        },
+                        response_format = new { type = "json_object" },
+                        temperature = 0.1,
+                        max_tokens = 1024
+                    };
+                    jsonPayload = JsonSerializer.Serialize(requestBody);
+                    httpResponse = await client.PostAsync(apiUrl, new StringContent(jsonPayload, Encoding.UTF8, "application/json"));
+                    responseContent = await httpResponse.Content.ReadAsStringAsync();
+                }
+
+                if (!httpResponse.IsSuccessStatusCode)
+                {
+                    return Content($"Lỗi API Groq: {responseContent}");
+                }
+
+                // 4. Parse dữ liệu
+                using var jsonDoc = JsonDocument.Parse(responseContent);
+                string? resultJson = jsonDoc.RootElement
+                    .GetProperty("choices")[0]
+                    .GetProperty("message")
+                    .GetProperty("content")
+                    .GetString();
+
+                if (string.IsNullOrEmpty(resultJson))
+                {
+                    return Content("Lỗi: API Groq không trả về nội dung.");
+                }
+
+                // 5. Deserialize với tùy chọn linh hoạt
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    AllowTrailingCommas = true
+                };
+
+                var dto = JsonSerializer.Deserialize<CandidateDto>(resultJson, options);
+
+                if (dto == null)
+                {
+                    return Content("Lỗi: Không phân tích được CV từ phản hồi của AI.");
+                }
+
+                // Trả về màn hình xem trước kết quả phân tích để người dùng xác nhận trước khi lưu
+                ViewBag.FilePath = "/uploads/" + uniqueFileName;
+                ViewBag.RawJsonResult = resultJson;
+
+                return View("AnalyzeResult", dto);
+            }
+            catch (Exception ex)
+            {
+                return Content($"Lỗi hệ thống: {ex.Message}");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Confirm(CandidateDto dto, string filePath, string rawJsonResult)
+        {
+            if (dto == null)
+            {
+                return Content("Lỗi: Dữ liệu xác nhận không hợp lệ.");
             }
 
-            // 2. Gọi Gemini AI để phân tích
-            var googleAI = new GoogleAI(_apiKey);
-            var model = googleAI.GenerativeModel("gemini-1.5-flash-001");
-
-            string prompt = $@"Phân tích CV sau và trả về DUY NHẤT định dạng JSON (không kèm lời dẫn). 
-            Cấu trúc: {{ ""FullName"": """", ""Email"": """", ""Phone"": """", ""Skills"": [], ""ExperienceYears"": 0, ""Summary"": """" }}
-            Nội dung CV: {rawText}";
-
-            var response = await model.GenerateContent(prompt);
-            string jsonString = (response.Text ?? string.Empty).Replace("```json", "").Replace("```", "").Trim();
-
-            // 3. Chuyển JSON thành Object và Lưu Database
-            var data = JsonSerializer.Deserialize<Candidate>(jsonString);
-
-            if (data != null)
+            var candidate = new Candidate
             {
-                // Gán thêm các thông tin không có trong JSON
-                data.RawJsonResult = jsonString;
-                data.AnalyzedAt = DateTime.Now;
+                FullName = dto.FullName ?? "Không rõ",
+                Email = dto.Email ?? string.Empty,
+                Phone = dto.Phone ?? string.Empty,
+                Skills = dto.Skills != null ? string.Join(", ", dto.Skills) : string.Empty,
+                ExperienceYears = dto.ExperienceYears,
+                Strengths = dto.Strengths ?? string.Empty,
+                Weaknesses = dto.Weaknesses ?? string.Empty,
+                Summary = dto.Summary ?? string.Empty,
+                FilePath = filePath ?? string.Empty,
+                AnalyzedAt = DateTime.Now,
+                RawJsonResult = rawJsonResult ?? string.Empty
+            };
 
-                // Giả sử bạn muốn lưu kỹ năng thành chuỗi cách nhau bởi dấu phẩy
-                // (Cần chỉnh lại logic tùy theo cách bạn xử lý mảng Skills trong Model)
+            _context.Candidate.Add(candidate);
+            await _context.SaveChangesAsync();
 
-                _context.Candidates.Add(data);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var candidate = await _context.Candidate.FindAsync(id);
+            if (candidate != null)
+            {
+                _context.Candidate.Remove(candidate);
                 await _context.SaveChangesAsync();
             }
 

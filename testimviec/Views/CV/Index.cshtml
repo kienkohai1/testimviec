@@ -1,12 +1,14 @@
 @model IEnumerable<testimviec.Models.Candidate>
 
-<h2>Danh sách ứng viên</h2>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Danh sách ứng viên</h2>
+    <a asp-action="Upload" class="btn btn-primary">
+        + Tải CV mới
+    </a>
+</div>
 
-<p>
-    <a asp-action="Upload">Tải CV mới</a>
-</p>
-
-<table class="table table-striped">
+<div class="table-responsive shadow-sm rounded bg-white">
+<table class="table table-striped table-hover align-middle mb-0">
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(m => m.First().FullName)</th>
@@ -14,7 +16,11 @@
             <th>@Html.DisplayNameFor(m => m.First().Phone)</th>
             <th>@Html.DisplayNameFor(m => m.First().Skills)</th>
             <th>@Html.DisplayNameFor(m => m.First().ExperienceYears)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Strengths)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Weaknesses)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Summary)</th>
             <th>@Html.DisplayNameFor(m => m.First().AnalyzedAt)</th>
+            <th style="width: 120px;">Thao tác</th>
         </tr>
     </thead>
     <tbody>
@@ -24,11 +30,51 @@
             <td>@item.FullName</td>
             <td>@item.Email</td>
             <td>@item.Phone</td>
-            <td>@item.Skills</td>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(item.Skills))
+                {
+                    foreach (var skill in item.Skills.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                    {
+                        <span class="badge bg-secondary me-1 mb-1">@skill</span>
+                    }
+                }
+            </td>
             <td>@item.ExperienceYears</td>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(item.Strengths))
+                {
+                    @(item.Strengths.Length > 80 ? item.Strengths.Substring(0, 80) + "..." : item.Strengths)
+                }
+            </td>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(item.Weaknesses))
+                {
+                    @(item.Weaknesses.Length > 80 ? item.Weaknesses.Substring(0, 80) + "..." : item.Weaknesses)
+                }
+            </td>
+            <td>
+                @(
+                    !string.IsNullOrWhiteSpace(item.Summary) && item.Summary.Length > 120
+                        ? item.Summary.Substring(0, 120) + "..."
+                        : item.Summary
+                 )
+            </td>
             <td>@item.AnalyzedAt.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>
+                <form asp-action="Delete" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" value="@item.Id" />
+                    <button type="submit"
+                            class="btn btn-sm btn-outline-danger"
+                            onclick="return confirm('Bạn có chắc chắn muốn xóa ứng viên này không?');">
+                        Xóa
+                    </button>
+                </form>
+            </td>
         </tr>
 }
     </tbody>
 </table>
+
+</div>
 
