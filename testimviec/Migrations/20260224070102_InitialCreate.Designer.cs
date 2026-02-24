@@ -12,7 +12,7 @@ using testimviec.Models;
 namespace testimviec.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260211145746_InitialCreate")]
+    [Migration("20260224070102_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -78,6 +78,39 @@ namespace testimviec.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Candidate");
+                });
+
+            modelBuilder.Entity("testimviec.Models.Job", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MinExperienceYears")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SalaryRange")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Skills")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Job");
                 });
 #pragma warning restore 612, 618
         }

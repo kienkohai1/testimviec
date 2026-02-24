@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\khacb\\source\\repos\\testimviec\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\views\\cv\\analyzeresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\views\\cv\\analyzeresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260224070102_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:testimviec\\Migrations\\20260224070102_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\controllers\\cvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\controllers\\cvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\views\\cv\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\views\\cv\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\models\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\models\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\migrations\\20260211145746_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\migrations\\20260211145746_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145341_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:testimviec\\Migrations\\20260211145341_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\views\\cv\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\views\\cv\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\views\\cv\\analyzeresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|solutionrelative:testimviec\\views\\cv\\analyzeresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145341_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:testimviec\\Migrations\\20260211145341_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9599A776-3AEA-4BD9-895F-034BD9B80BB2}|testimviec\\testimviec.csproj|c:\\users\\khacb\\source\\repos\\testimviec\\testimviec\\testimviec.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -50,86 +50,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AnalyzeResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Views\\CV\\AnalyzeResult.cshtml",
-              "RelativeDocumentMoniker": "testimviec\\Views\\CV\\AnalyzeResult.cshtml",
-              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Views\\CV\\AnalyzeResult.cshtml*",
-              "RelativeToolTip": "testimviec\\Views\\CV\\AnalyzeResult.cshtml*",
-              "ViewState": "AgIAADYAAAAAAAAAAAAgwFUAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-11T16:00:56.651Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "20260224070102_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260224070102_InitialCreate.cs",
+              "RelativeDocumentMoniker": "testimviec\\Migrations\\20260224070102_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260224070102_InitialCreate.cs",
+              "RelativeToolTip": "testimviec\\Migrations\\20260224070102_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T07:01:02.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Views\\CV\\Index.cshtml",
               "RelativeDocumentMoniker": "testimviec\\Views\\CV\\Index.cshtml",
               "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Views\\CV\\Index.cshtml",
               "RelativeToolTip": "testimviec\\Views\\CV\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAApwMQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-11T15:50:21.821Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20260211145341_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145341_InitialCreate.cs",
-              "RelativeDocumentMoniker": "testimviec\\Migrations\\20260211145341_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145341_InitialCreate.cs",
-              "RelativeToolTip": "testimviec\\Migrations\\20260211145341_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T14:53:41.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CVController.cs",
-              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Controllers\\CVController.cs",
-              "RelativeDocumentMoniker": "testimviec\\Controllers\\CVController.cs",
-              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Controllers\\CVController.cs*",
-              "RelativeToolTip": "testimviec\\Controllers\\CVController.cs*",
-              "ViewState": "AgIAAM0AAAAAAAAAAAAgwO0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:15:53.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json",
-              "RelativeDocumentMoniker": "testimviec\\appsettings.json",
-              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json",
-              "RelativeToolTip": "testimviec\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-03T09:12:12.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Program.cs",
-              "RelativeDocumentMoniker": "testimviec\\Program.cs",
-              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Program.cs",
-              "RelativeToolTip": "testimviec\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:11:43.751Z"
             },
             {
               "$type": "Document",
@@ -159,19 +110,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "20260211145746_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145746_InitialCreate.cs",
-              "RelativeDocumentMoniker": "testimviec\\Migrations\\20260211145746_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145746_InitialCreate.cs",
-              "RelativeToolTip": "testimviec\\Migrations\\20260211145746_InitialCreate.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T14:57:46.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "testimviec\\Models\\ApplicationDbContext.cs",
@@ -179,7 +117,71 @@
               "RelativeToolTip": "testimviec\\Models\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:04:51.013Z"
+              "WhenOpened": "2026-02-03T09:04:51.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CVController.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Controllers\\CVController.cs",
+              "RelativeDocumentMoniker": "testimviec\\Controllers\\CVController.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Controllers\\CVController.cs",
+              "RelativeToolTip": "testimviec\\Controllers\\CVController.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAowO0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:15:53.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json",
+              "RelativeDocumentMoniker": "testimviec\\appsettings.json",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\appsettings.json*",
+              "RelativeToolTip": "testimviec\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-03T09:12:12.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AnalyzeResult.cshtml",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Views\\CV\\AnalyzeResult.cshtml",
+              "RelativeDocumentMoniker": "testimviec\\Views\\CV\\AnalyzeResult.cshtml",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Views\\CV\\AnalyzeResult.cshtml",
+              "RelativeToolTip": "testimviec\\Views\\CV\\AnalyzeResult.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwFUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-11T16:00:56.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Program.cs",
+              "RelativeDocumentMoniker": "testimviec\\Program.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Program.cs",
+              "RelativeToolTip": "testimviec\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T09:11:43.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20260211145341_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145341_InitialCreate.cs",
+              "RelativeDocumentMoniker": "testimviec\\Migrations\\20260211145341_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\Migrations\\20260211145341_InitialCreate.cs",
+              "RelativeToolTip": "testimviec\\Migrations\\20260211145341_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T14:53:41.922Z"
             }
           ]
         }

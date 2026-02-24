@@ -1098,6 +1098,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\testimviec.8pwly10oz6.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\24128d37-3cc2-47cf-8aaf-b8a32106efea_Ha-Hang-TopCV.vn-131025.142251.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>testimviec</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/testimviec</BasePath>
+      <RelativePath>uploads/24128d37-3cc2-47cf-8aaf-b8a32106efea_Ha-Hang-TopCV.vn-131025.142251.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>d6aptxqe0h</Fingerprint>
+      <Integrity>xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\24128d37-3cc2-47cf-8aaf-b8a32106efea_Ha-Hang-TopCV.vn-131025.142251.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2c697c68-c410-4d77-ae4c-18e98f9f50bc_Nguyen-Trung-Kien--TopCV.vn-131025.143139.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>testimviec</SourceId>
@@ -1296,6 +1314,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\90b24003-0217-4a4e-a3de-b47c3d94f70f_Ha-Hang-TopCV.vn-131025.142251.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9d0a902f-435c-492d-aa5d-540629241e2c_Ha-Hang-TopCV.vn-131025.142251.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>testimviec</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/testimviec</BasePath>
+      <RelativePath>uploads/9d0a902f-435c-492d-aa5d-540629241e2c_Ha-Hang-TopCV.vn-131025.142251.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>d6aptxqe0h</Fingerprint>
+      <Integrity>xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9d0a902f-435c-492d-aa5d-540629241e2c_Ha-Hang-TopCV.vn-131025.142251.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9e9ed6e0-f84d-4ddf-8894-9a1ed573e20b_Ha-Hang-TopCV.vn-131025.142251.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>testimviec</SourceId>
@@ -1313,6 +1349,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\9e9ed6e0-f84d-4ddf-8894-9a1ed573e20b_Ha-Hang-TopCV.vn-131025.142251.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a43dfbff-bb51-48c2-b41d-3e096b2d328d_Nguyen-Trung-Kien--TopCV.vn-131025.143139.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>testimviec</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/testimviec</BasePath>
+      <RelativePath>uploads/a43dfbff-bb51-48c2-b41d-3e096b2d328d_Nguyen-Trung-Kien--TopCV.vn-131025.143139.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>onruibq5gx</Fingerprint>
+      <Integrity>fNq0bc1S6O3nCvrufEt01LPVibhjwAgEAwuEl2KmfNo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a43dfbff-bb51-48c2-b41d-3e096b2d328d_Nguyen-Trung-Kien--TopCV.vn-131025.143139.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a57da36b-12e6-4a0c-aa4f-79eb4282bc31_Ha-Hang-TopCV.vn-131025.142251.pdf'))">
       <SourceType>Package</SourceType>

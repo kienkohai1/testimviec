@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace testimviec.Models
 {
@@ -10,6 +10,7 @@ namespace testimviec.Models
         }
 
         public DbSet<Candidate> Candidate { get; set; }
+        public DbSet<Job> Job { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

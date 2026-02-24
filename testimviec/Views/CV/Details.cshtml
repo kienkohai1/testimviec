@@ -1,0 +1,80 @@
+@model testimviec.Models.Candidate
+
+@{
+    ViewData["Title"] = "Chi tiết hồ sơ & Gợi ý công việc";
+    var jobs = ViewBag.SuggestedJobs as List<testimviec.Models.Job> ?? new List<testimviec.Models.Job>();
+}
+
+<div class="container py-4">
+    <div class="mb-3">
+        <a asp-action="Index" class="btn btn-link text-decoration-none">
+            ← Quay lại danh sách
+        </a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Thông tin ứng viên</h4>
+                    <p class="mb-1"><strong>Họ tên:</strong> @Model.FullName</p>
+                    <p class="mb-1"><strong>Email:</strong> @Model.Email</p>
+                    <p class="mb-1"><strong>Số điện thoại:</strong> @Model.Phone</p>
+                    <p class="mb-1"><strong>Kinh nghiệm:</strong> @Model.ExperienceYears năm</p>
+                    <p class="mb-2"><strong>Kỹ năng:</strong> @Model.Skills</p>
+                    <p class="mb-2"><strong>Điểm mạnh:</strong> @Model.Strengths</p>
+                    <p class="mb-2"><strong>Điểm yếu:</strong> @Model.Weaknesses</p>
+                    <p class="mb-0"><strong>Tóm tắt:</strong> @Model.Summary</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Gợi ý công việc phù hợp</h4>
+
+                    @if (!jobs.Any())
+                    {
+                        <p class="text-muted">Chưa tìm thấy công việc phù hợp trong hệ thống.</p>
+                    }
+                    else
+                    {
+                        <ul class="list-group list-group-flush">
+                            @foreach (var job in jobs)
+                            {
+                                <li class="list-group-item px-0">
+                                    <h5 class="mb-1">@job.Title</h5>
+                                    @if (!string.IsNullOrWhiteSpace(job.Location) || !string.IsNullOrWhiteSpace(job.SalaryRange))
+                                    {
+                                        <p class="small text-muted mb-1">
+                                            @if (!string.IsNullOrWhiteSpace(job.Location))
+                                            {
+                                                <span>@job.Location</span>
+                                            }
+                                            @if (!string.IsNullOrWhiteSpace(job.Location) && !string.IsNullOrWhiteSpace(job.SalaryRange))
+                                            {
+                                                <span> • </span>
+                                            }
+                                            @if (!string.IsNullOrWhiteSpace(job.SalaryRange))
+                                            {
+                                                <span>Mức lương: @job.SalaryRange</span>
+                                            }
+                                        </p>
+                                    }
+                                    <p class="small mb-1"><strong>Yêu cầu:</strong> @job.MinExperienceYears+ năm kinh nghiệm</p>
+                                    <p class="small mb-1"><strong>Kỹ năng chính:</strong> @job.Skills</p>
+                                    @if (!string.IsNullOrWhiteSpace(job.Description))
+                                    {
+                                        <p class="small text-muted mb-0">@job.Description</p>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

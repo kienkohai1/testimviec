@@ -39,6 +39,40 @@ namespace testimviec.Controllers
             return View(candidates);
         }
 
+        public async Task<IActionResult> Details(int id)
+        {
+            var candidate = await _context.Candidate.FindAsync(id);
+            if (candidate == null) return NotFound();
+
+            var candidateSkills = (candidate.Skills ?? string.Empty)
+                .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                .Select(s => s.ToLowerInvariant())
+                .ToList();
+
+            var suggestedJobsQuery = _context.Job.AsQueryable();
+
+            if (candidateSkills.Any())
+            {
+                suggestedJobsQuery = suggestedJobsQuery
+                    .Where(job =>
+                        job.Skills != null &&
+                        job.Skills
+                            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                            .Select(s => s.ToLowerInvariant())
+                            .Any(js => candidateSkills.Contains(js))
+                        && candidate.ExperienceYears >= job.MinExperienceYears
+                    );
+            }
+
+            var suggestedJobs = suggestedJobsQuery
+                .OrderByDescending(j => j.MinExperienceYears)
+                .Take(10)
+                .ToList();
+
+            ViewBag.SuggestedJobs = suggestedJobs;
+            return View(candidate);
+        }
+
         [HttpGet]
         public IActionResult Upload()
         {
@@ -200,10 +234,10 @@ namespace testimviec.Controllers
                 FullName = dto.FullName ?? "Không rõ",
                 Email = dto.Email ?? string.Empty,
                 Phone = dto.Phone ?? string.Empty,
-
+                
                 // Logic quan trọng: Lấy từ skillsString (chuỗi người dùng đã sửa trên form)
-                Skills = !string.IsNullOrEmpty(skillsString)
-                            ? skillsString
+                Skills = !string.IsNullOrEmpty(skillsString) 
+                            ? skillsString 
                             : (dto.Skills != null ? string.Join(", ", dto.Skills) : string.Empty),
 
                 ExperienceYears = dto.ExperienceYears,
