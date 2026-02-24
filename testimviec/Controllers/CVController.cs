@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore; // Quan trọng: Cần để dùng Include, ThenInclude
 using testimviec.Models;
 using System.Text.Json;
 using UglyToad.PdfPig;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace testimviec.Controllers
 {
-    // DTO để hứng dữ liệu từ AI
+    // DTO để hứng dữ liệu từ AI (Giữ nguyên)
     public class CandidateDto
     {
         public required string FullName { get; set; }
@@ -33,41 +34,49 @@ namespace testimviec.Controllers
             _configuration = configuration;
         }
 
-        public IActionResult Index()
+        // --- 1. ACTION INDEX: Hiển thị danh sách ---
+        public async Task<IActionResult> Index()
         {
-            var candidates = _context.Candidate.ToList();
+            // Cần Include để lấy dữ liệu từ bảng Skills thông qua bảng trung gian
+            var candidates = await _context.Candidate
+                .Include(c => c.CandidateSkills)
+                .ThenInclude(cs => cs.Skill)
+                .ToListAsync();
+
             return View(candidates);
         }
 
+        // --- 2. ACTION DETAILS: Gợi ý việc làm (Logic khớp lệnh mới) ---
         public async Task<IActionResult> Details(int id)
         {
-            var candidate = await _context.Candidate.FindAsync(id);
+            // 1. Lấy thông tin ứng viên kèm danh sách kỹ năng
+            var candidate = await _context.Candidate
+                .Include(c => c.CandidateSkills)
+                .ThenInclude(cs => cs.Skill)
+                .FirstOrDefaultAsync(c => c.Id == id);
+
             if (candidate == null) return NotFound();
 
-            var candidateSkills = (candidate.Skills ?? string.Empty)
-                .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-                .Select(s => s.ToLowerInvariant())
-                .ToList();
+            // 2. Lấy danh sách ID các kỹ năng của ứng viên
+            var candidateSkillIds = candidate.CandidateSkills.Select(cs => cs.SkillId).ToList();
 
-            var suggestedJobsQuery = _context.Job.AsQueryable();
-
-            if (candidateSkills.Any())
-            {
-                suggestedJobsQuery = suggestedJobsQuery
-                    .Where(job =>
-                        job.Skills != null &&
-                        job.Skills
-                            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-                            .Select(s => s.ToLowerInvariant())
-                            .Any(js => candidateSkills.Contains(js))
-                        && candidate.ExperienceYears >= job.MinExperienceYears
-                    );
-            }
-
-            var suggestedJobs = suggestedJobsQuery
-                .OrderByDescending(j => j.MinExperienceYears)
+            // 3. Tìm việc làm phù hợp
+            // Logic: Job phải có ít nhất 1 kỹ năng trùng VÀ Job.Exp <= Candidate.Exp
+            var suggestedJobs = await _context.Job
+                .Include(j => j.JobSkills)
+                .ThenInclude(js => js.Skill) // Load skill của job để hiển thị nếu cần
+                .Where(job =>
+                    // Điều kiện 1: Có kỹ năng trùng (Query trên bảng trung gian JobSkill)
+                    job.JobSkills.Any(js => candidateSkillIds.Contains(js.SkillId))
+                    &&
+                    // Điều kiện 2: Kinh nghiệm ứng viên đáp ứng yêu cầu tối thiểu
+                    candidate.ExperienceYears >= job.MinExperienceYears
+                )
+                // Sắp xếp: Ưu tiên công việc trùng nhiều kỹ năng nhất, sau đó đến kinh nghiệm cao nhất
+                .OrderByDescending(job => job.JobSkills.Count(js => candidateSkillIds.Contains(js.SkillId)))
+                .ThenByDescending(job => job.MinExperienceYears)
                 .Take(10)
-                .ToList();
+                .ToListAsync();
 
             ViewBag.SuggestedJobs = suggestedJobs;
             return View(candidate);
@@ -220,26 +229,19 @@ namespace testimviec.Controllers
             }
         }
 
+        // --- 3. ACTION CONFIRM: Lưu dữ liệu (Logic tách chuỗi Many-to-Many mới) ---
         [HttpPost]
-        // Đã thêm tham số skillsString vào đây để nhận dữ liệu từ form
         public async Task<IActionResult> Confirm(CandidateDto dto, string filePath, string rawJsonResult, string skillsString)
         {
-            if (dto == null)
-            {
-                return Content("Lỗi: Dữ liệu xác nhận không hợp lệ.");
-            }
+            if (dto == null) return Content("Lỗi: Dữ liệu xác nhận không hợp lệ.");
 
+            // Bước 1: Tạo Candidate (Chưa xử lý Skills ngay)
             var candidate = new Candidate
             {
                 FullName = dto.FullName ?? "Không rõ",
                 Email = dto.Email ?? string.Empty,
                 Phone = dto.Phone ?? string.Empty,
-                
-                // Logic quan trọng: Lấy từ skillsString (chuỗi người dùng đã sửa trên form)
-                Skills = !string.IsNullOrEmpty(skillsString) 
-                            ? skillsString 
-                            : (dto.Skills != null ? string.Join(", ", dto.Skills) : string.Empty),
-
+                // Lưu ý: Đã bỏ property Skills dạng string ở Model Candidate
                 ExperienceYears = dto.ExperienceYears,
                 Strengths = dto.Strengths ?? string.Empty,
                 Weaknesses = dto.Weaknesses ?? string.Empty,
@@ -249,12 +251,56 @@ namespace testimviec.Controllers
                 RawJsonResult = rawJsonResult ?? string.Empty
             };
 
+            // Lưu Candidate trước để có ID (Scope Identity)
             _context.Candidate.Add(candidate);
+            await _context.SaveChangesAsync();
+
+            // Bước 2: Xử lý Skills (Many-to-Many)
+            // Ưu tiên lấy từ skillsString (người dùng sửa), nếu không thì lấy từ dto.Skills (AI trả về)
+            List<string> skillNames = new List<string>();
+
+            if (!string.IsNullOrEmpty(skillsString))
+            {
+                skillNames = skillsString.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries).ToList();
+            }
+            else if (dto.Skills != null)
+            {
+                skillNames = dto.Skills;
+            }
+
+            // Loại bỏ trùng lặp trong danh sách đầu vào
+            skillNames = skillNames.Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+
+            foreach (var name in skillNames)
+            {
+                // Kiểm tra xem kỹ năng đã có trong DB chưa (không phân biệt hoa thường)
+                var dbSkill = await _context.Skills
+                    .FirstOrDefaultAsync(s => s.Name.ToLower() == name.ToLower());
+
+                if (dbSkill == null)
+                {
+                    // Nếu chưa có, tạo mới
+                    dbSkill = new Skill { Name = name }; // Có thể cần chuẩn hóa tên (ví dụ: In hoa chữ cái đầu)
+                    _context.Skills.Add(dbSkill);
+                    await _context.SaveChangesAsync(); // Lưu để lấy ID của Skill mới
+                }
+
+                // Tạo liên kết trong bảng trung gian
+                var candidateSkill = new CandidateSkill
+                {
+                    CandidateId = candidate.Id,
+                    SkillId = dbSkill.SkillId
+                };
+                _context.CandidateSkills.Add(candidateSkill);
+            }
+
+            // Lưu toàn bộ các liên kết CandidateSkill
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
         }
 
+        // --- 4. ACTION DELETE: Xóa dữ liệu ---
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
@@ -262,6 +308,8 @@ namespace testimviec.Controllers
             var candidate = await _context.Candidate.FindAsync(id);
             if (candidate != null)
             {
+                // Entity Framework Core sẽ tự động xóa các dòng trong bảng CandidateSkills 
+                // nếu bạn đã cấu hình Cascade Delete (mặc định là có).
                 _context.Candidate.Remove(candidate);
                 await _context.SaveChangesAsync();
             }

@@ -17,7 +17,7 @@ namespace testimviec.Models
         public required string Phone { get; set; }
 
         [Display(Name = "Kỹ năng")]
-        public required string Skills { get; set; } // Lưu dạng chuỗi cách nhau bởi dấu phẩy
+        public ICollection<CandidateSkill> CandidateSkills { get; set; } = new List<CandidateSkill>();
 
         [Display(Name = "Số năm kinh nghiệm")]
         public int ExperienceYears { get; set; }

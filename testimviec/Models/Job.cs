@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace testimviec.Models
 {
@@ -15,7 +16,7 @@ namespace testimviec.Models
         public string? Description { get; set; }
 
         [Display(Name = "Kỹ năng yêu cầu")]
-        public required string Skills { get; set; } // Chuỗi kỹ năng, cách nhau bởi dấu phẩy
+        public ICollection<JobSkill> JobSkills { get; set; } = new List<JobSkill>();
 
         [Display(Name = "Số năm kinh nghiệm tối thiểu")]
         public int MinExperienceYears { get; set; }
