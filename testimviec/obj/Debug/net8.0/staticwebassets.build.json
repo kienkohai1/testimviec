@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U54I7zqXZfmrpO4opximUko1nAfZhssLER6R6Qv8BgI=",
+  "Hash": "QZc2GyW20R6ure8Ujx0zyNBkoKS9MiWdhCqxGhLw+tM=",
   "Source": "testimviec",
   "BasePath": "_content/testimviec",
   "Mode": "Default",
@@ -1676,6 +1676,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c479a7a4-3172-470a-b84e-a817d838546c_Ha-Hang-TopCV.vn-131025.142251.pdf"
     },
     {
+      "Identity": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "SourceId": "testimviec",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\",
+      "BasePath": "_content/testimviec",
+      "RelativePath": "uploads/cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d6aptxqe0h",
+      "Integrity": "xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.pdf"
+    },
+    {
       "Identity": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\d046a8b9-5fd2-4b72-9f85-bd21ae235632_Ha-Hang-TopCV.vn-131025.142251.pdf",
       "SourceId": "testimviec",
       "SourceType": "Discovered",
@@ -1758,6 +1779,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\db264896-20b7-42b5-ad07-1afd701e8a93_Ha-Hang-TopCV.vn-131025.142251.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "SourceId": "testimviec",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\",
+      "BasePath": "_content/testimviec",
+      "RelativePath": "uploads/e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d6aptxqe0h",
+      "Integrity": "xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.pdf"
     },
     {
       "Identity": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\f8a19880-9e2c-4d76-ae50-b23f5aafcdcd_Ha-Hang-TopCV.vn-131025.142251.pdf",
@@ -6725,7 +6767,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Feb 2026 09:14:13 GMT"
+          "Value": "Tue, 24 Feb 2026 08:06:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6770,7 +6812,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Feb 2026 09:14:13 GMT"
+          "Value": "Tue, 24 Feb 2026 08:06:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6815,7 +6857,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Feb 2026 09:14:13 GMT"
+          "Value": "Tue, 24 Feb 2026 08:06:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6852,7 +6894,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Feb 2026 09:14:13 GMT"
+          "Value": "Tue, 24 Feb 2026 08:06:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8261,6 +8303,88 @@
       ]
     },
     {
+      "Route": "uploads/cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.d6aptxqe0h.pdf",
+      "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Feb 2026 07:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d6aptxqe0h"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\cd45a704-35cb-4441-8200-12cef13b6512_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Feb 2026 07:05:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc="
+        }
+      ]
+    },
+    {
       "Route": "uploads/d046a8b9-5fd2-4b72-9f85-bd21ae235632_Ha-Hang-TopCV.vn-131025.142251.d6aptxqe0h.pdf",
       "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\d046a8b9-5fd2-4b72-9f85-bd21ae235632_Ha-Hang-TopCV.vn-131025.142251.pdf",
       "Selectors": [],
@@ -8575,6 +8699,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 11 Feb 2026 15:22:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.d6aptxqe0h.pdf",
+      "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Feb 2026 08:10:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d6aptxqe0h"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "AssetFile": "C:\\Users\\khacb\\source\\repos\\testimviec\\testimviec\\wwwroot\\uploads\\e4d262c2-28c6-4ed2-b9a8-2e04179c158e_Ha-Hang-TopCV.vn-131025.142251.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "314671"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xYA7AmVhFqA8JSGZiTcf5NzDEzs7QUxNAGicxB0d2Xc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Feb 2026 08:10:25 GMT"
         },
         {
           "Name": "Cache-Control",

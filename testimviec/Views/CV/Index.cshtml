@@ -113,21 +113,27 @@
 
                                 <td style="max-width: 250px;">
                                     <div class="d-flex flex-wrap gap-1">
-                                        @if (!string.IsNullOrWhiteSpace(item.Skills))
+                                        @{
+                                            var skillNames = item.CandidateSkills?
+                                                .Select(cs => cs.Skill.Name)
+                                                .Where(n => !string.IsNullOrWhiteSpace(n))
+                                                .Distinct()
+                                                .ToList() ?? new List<string>();
+                                        }
+                                        @if (skillNames.Any())
                                         {
-                                            var skills = item.Skills.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-                                            var displayLimit = 4; // Hiển thị nhiều hơn chút vì có cột riêng
-                                            foreach (var skill in skills.Take(displayLimit))
+                                            var displayLimit = 4;
+                                            foreach (var skill in skillNames.Take(displayLimit))
                                             {
                                                 <span class="badge bg-secondary fw-normal">@skill</span>
                                             }
-                                            if (skills.Length > displayLimit)
+                                            if (skillNames.Count > displayLimit)
                                             {
                                                 <span class="badge bg-light text-secondary border"
                                                       data-bs-toggle="tooltip"
-                                                      title="@string.Join(", ", skills.Skip(displayLimit))"
+                                                      title="@string.Join(", ", skillNames.Skip(displayLimit))"
                                                       style="cursor: help;">
-                                                    +@(skills.Length - displayLimit)
+                                                    +@(skillNames.Count - displayLimit)
                                                 </span>
                                             }
                                         }

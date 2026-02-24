@@ -21,7 +21,17 @@
                     <p class="mb-1"><strong>Email:</strong> @Model.Email</p>
                     <p class="mb-1"><strong>Số điện thoại:</strong> @Model.Phone</p>
                     <p class="mb-1"><strong>Kinh nghiệm:</strong> @Model.ExperienceYears năm</p>
-                    <p class="mb-2"><strong>Kỹ năng:</strong> @Model.Skills</p>
+                    <p class="mb-2">
+                        <strong>Kỹ năng:</strong>
+                        @{
+                            var candidateSkillNames = Model.CandidateSkills?
+                                .Select(cs => cs.Skill.Name)
+                                .Where(n => !string.IsNullOrWhiteSpace(n))
+                                .Distinct()
+                                .ToList() ?? new List<string>();
+                        }
+                        @string.Join(", ", candidateSkillNames)
+                    </p>
                     <p class="mb-2"><strong>Điểm mạnh:</strong> @Model.Strengths</p>
                     <p class="mb-2"><strong>Điểm yếu:</strong> @Model.Weaknesses</p>
                     <p class="mb-0"><strong>Tóm tắt:</strong> @Model.Summary</p>
@@ -63,7 +73,17 @@
                                         </p>
                                     }
                                     <p class="small mb-1"><strong>Yêu cầu:</strong> @job.MinExperienceYears+ năm kinh nghiệm</p>
-                                    <p class="small mb-1"><strong>Kỹ năng chính:</strong> @job.Skills</p>
+                                    <p class="small mb-1">
+                                        <strong>Kỹ năng chính:</strong>
+                                        @{
+                                            var jobSkillNames = job.JobSkills?
+                                                .Select(js => js.Skill.Name)
+                                                .Where(n => !string.IsNullOrWhiteSpace(n))
+                                                .Distinct()
+                                                .ToList() ?? new List<string>();
+                                        }
+                                        @string.Join(", ", jobSkillNames)
+                                    </p>
                                     @if (!string.IsNullOrWhiteSpace(job.Description))
                                     {
                                         <p class="small text-muted mb-0">@job.Description</p>
