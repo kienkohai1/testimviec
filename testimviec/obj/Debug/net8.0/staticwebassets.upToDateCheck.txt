@@ -58,6 +58,7 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\uploads\02197143-8aec-4a27-a0d7-1a816371ef28_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\24128d37-3cc2-47cf-8aaf-b8a32106efea_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\2c697c68-c410-4d77-ae4c-18e98f9f50bc_Nguyen-Trung-Kien--TopCV.vn-131025.143139.pdf
 wwwroot\uploads\30b88f0f-134f-4fcd-8e99-ecbf044c3fe7_Ha-Hang-TopCV.vn-131025.142251.pdf
@@ -68,6 +69,8 @@ wwwroot\uploads\64f8e573-1ca1-42f0-b630-661509d06834_Ha-Hang-TopCV.vn-131025.142
 wwwroot\uploads\7007dab6-73fe-46d2-a59c-5d8bb42e7ae1_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\70a4a907-5bef-42de-9044-67af9d243143_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\755ece6c-d9bb-4a93-8d08-1fd3564d856d_Ha-Hang-TopCV.vn-131025.142251.pdf
+wwwroot\uploads\7b6ea25f-159c-4452-91fe-15d28a3b8a6b_Ha-Hang-TopCV.vn-131025.142251.pdf
+wwwroot\uploads\7b800d06-4db4-4ba7-8e73-03404e3e0ea0_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\878a2ca1-8c07-4fc6-aa78-316bd64a3e6e_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\90b24003-0217-4a4e-a3de-b47c3d94f70f_Ha-Hang-TopCV.vn-131025.142251.pdf
 wwwroot\uploads\9d0a902f-435c-492d-aa5d-540629241e2c_Ha-Hang-TopCV.vn-131025.142251.pdf

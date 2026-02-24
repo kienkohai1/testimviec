@@ -1,0 +1,155 @@
+﻿@model testimviec.Models.Job
+
+@{
+    ViewData["Title"] = "Thêm việc làm mới";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h2>Thêm việc làm mới</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label fw-bold"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="SalaryRange" class="form-label fw-bold"></label>
+                        <input asp-for="SalaryRange" class="form-control" placeholder="VD: 10 - 15 triệu" />
+                        <span asp-validation-for="SalaryRange" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="MinExperienceYears" class="form-label fw-bold"></label>
+                        <input asp-for="MinExperienceYears" class="form-control" type="number" min="0" />
+                        <span asp-validation-for="MinExperienceYears" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Location" class="form-label fw-bold"></label>
+                    <input asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Kỹ năng yêu cầu</label>
+                    <div class="input-group">
+                        <select name="selectedSkills" id="skillsDropdown" class="form-control" multiple="multiple" asp-items="ViewBag.Skills">
+                        </select>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+                            <i class="bi bi-plus-lg"></i> Thêm nhanh
+                        </button>
+                    </div>
+                    <div class="form-text">Chọn từ danh sách hoặc bấm nút "Thêm nhanh" để tạo mới.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label fw-bold"></label>
+                    <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Tạo mới" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addSkillModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm kỹ năng mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Tên kỹ năng:</label>
+                    <input type="text" id="newSkillName" class="form-control" placeholder="VD: Docker, AWS..." />
+                    <span id="skillError" class="text-danger mt-1 d-block"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary" id="btnSaveSkill">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // 1. Khởi tạo Select2
+            var $select = $('#skillsDropdown').select2({
+                placeholder: "Chọn kỹ năng...",
+                allowClear: true,
+                width: '100%' // Quan trọng khi dùng input-group
+            });
+
+            // 2. Xử lý nút Lưu trong Modal
+            $('#btnSaveSkill').click(function() {
+                var name = $('#newSkillName').val();
+                var $btn = $(this);
+                var $error = $('#skillError');
+
+                // Reset lỗi
+                $error.text('');
+
+                if (!name) {
+                    $error.text('Vui lòng nhập tên kỹ năng.');
+                    return;
+                }
+
+                $btn.prop('disabled', true).text('Đang lưu...');
+
+                // Gọi Ajax lên Server
+                $.post('/Job/CreateSkillQuick', { skillName: name })
+                    .done(function(response) {
+                        if (response.success) {
+                            // A. Tạo option mới và thêm vào Select2
+                            var newOption = new Option(response.name, response.id, true, true);
+                            $select.append(newOption).trigger('change');
+
+                            // B. Đóng modal và reset form
+                            $('#addSkillModal').modal('hide');
+                            $('#newSkillName').val('');
+
+                            // C. Thông báo nhỏ (tùy chọn)
+                            alert('Đã thêm: ' + response.name);
+                        } else {
+                            $error.text(response.message);
+                        }
+                    })
+                    .fail(function() {
+                        $error.text('Lỗi kết nối server.');
+                    })
+                    .always(function() {
+                        $btn.prop('disabled', false).text('Lưu');
+                    });
+            });
+
+            // Focus vào ô input khi mở modal
+            $('#addSkillModal').on('shown.bs.modal', function () {
+                $('#newSkillName').focus();
+            });
+        });
+    </script>
+}

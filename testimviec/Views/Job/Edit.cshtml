@@ -1,0 +1,81 @@
+﻿@model testimviec.Models.Job
+
+@{
+    ViewData["Title"] = "Chỉnh sửa việc làm";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h2>Chỉnh sửa việc làm</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label fw-bold"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="SalaryRange" class="form-label fw-bold"></label>
+                        <input asp-for="SalaryRange" class="form-control" />
+                        <span asp-validation-for="SalaryRange" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="MinExperienceYears" class="form-label fw-bold"></label>
+                        <input asp-for="MinExperienceYears" class="form-control" type="number" min="0" />
+                        <span asp-validation-for="MinExperienceYears" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Location" class="form-label fw-bold"></label>
+                    <input asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Kỹ năng yêu cầu</label>
+                    <select name="selectedSkills" id="skillsDropdown" class="form-control" multiple="multiple" asp-items="ViewBag.Skills">
+                    </select>
+                    <div class="form-text">Chọn hoặc bỏ chọn các kỹ năng.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label fw-bold"></label>
+                    <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#skillsDropdown').select2({
+                placeholder: "Chọn kỹ năng...",
+                allowClear: true,
+                width: '100%'
+            });
+        });
+    </script>
+}
